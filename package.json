@@ -1,0 +1,19 @@
+{
+  "name": "erdos-numbers-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guyHollander/Erdos-Numbers-Project.git"
+  },
+  "author": "Guy Hollander",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guyHollander/Erdos-Numbers-Project/issues"
+  },
+  "homepage": "https://github.com/guyHollander/Erdos-Numbers-Project#readme"
+}
