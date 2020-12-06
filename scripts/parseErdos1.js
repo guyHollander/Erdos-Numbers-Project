@@ -14,6 +14,6 @@ let  nodesArray = erdos1.split('\r\n').map((s)=> s.replace('*','').trim()).
                     map((s)=> [++lastInd,s])
 
 
-fs.appendFileSync(".\\data_set\\Nodes",nodesArray.join('\n'))
+fs.appendFileSync(".\\data_set\\Nodes",nodesArray.join('\n').toLowerCase())
 console.log(nodesArray.join('\n'))
 

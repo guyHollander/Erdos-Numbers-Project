@@ -16,4 +16,4 @@ let erdos2Nodes = erdos2.map((nodes)=> nodes[0]).map((s)=>s.replace('*','').trim
 
 // console.log(erdos2Raw.split('|').map(s => s.split('\r\n')))
 console.log(erdos2Nodes)
-fs.appendFileSync('.\\data_set\\Nodes', '\n' + erdos2Nodes.join('\n'))
+fs.appendFileSync('.\\data_set\\Nodes', '\n' + erdos2Nodes.join('\n').toLowerCase())
