@@ -9,7 +9,7 @@ let lastInd = Number(nodes[nodes.length-1][0])
 // console.log(nodes.substring(nodes.lastIndexOf(',')-1,nodes.lastIndexOf(',')))
 // console.log(lastInd)
 let erdos2Nodes = erdos2.map((nodes)=> nodes[0]).map((s)=>s.replace('*','').trim()).map((s)=>s.replace(/\^\d/,'')).
-                        map((s)=>s.split(',')).map((name)=> [name[1], name[0]]).
+                        map((s)=>s.split(',')).map((name)=> [name.slice(1).join(''), name[0]]).
                         map((name)=> name[0] ? [name[0].trim().split(' ').join('_'),name[1].split(' ').join('_')] : ['',name[1].split(' ').join('_')]).
                         map(name=> name.join('_')).
                         map(name=>[++lastInd,name])
