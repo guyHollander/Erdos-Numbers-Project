@@ -1,7 +1,7 @@
-import {Nodes,Node} from './Nodes.js'
-import {Edges} from './Edges.js'
+import {Nodes,Node} from './Nodes.mjs'
+import {Edges} from './Edges.mjs'
 
-class ErdosGraph{
+export class ErdosGraph{
     nodes = new Nodes()
     edges = new Edges()
     constructor(){
