@@ -1,8 +1,9 @@
-import { throws } from 'assert'
-import fs from 'fs'
 
+import fs from 'fs'
+import path from 'path'
+const nodesPath = path.format({dir:'.\\data_set', base:'Nodes'})
 class Nodes {
-    nodes = fs.readFileSync('.\\data_set\\Nodes', {encoding:'utf-8'}).split('\n').map((s)=>s.split(','))
+    nodes = fs.readFileSync(nodesPath, {encoding:'utf-8'}).split('\n').map((s)=>s.split(','))
     lstInd = Number(this.nodes[this.nodes.length-1][0])
     idMap = {}
     namesMap = {}
@@ -39,4 +40,4 @@ edges.forEach((edge)=>{
 })
 
 console.log(erdos2Edges);
-fs.appendFileSync('.\\data_set\\Edges', '\n' + erdos2Edges.join('\n'))
+// fs.appendFileSync('.\\data_set\\Edges', '\n' + erdos2Edges.join('\n'))
