@@ -1,4 +1,5 @@
-const express = require('express'), router = express.Router();
+import express from 'express';
+const router = express.Router();
 
 /* GET home page. */
 router.get('/erdosPath', function(req, res, next) {
@@ -6,4 +7,4 @@ router.get('/erdosPath', function(req, res, next) {
   res.json({hi:req.query})
 });
 
-module.exports = router;
+export default router
