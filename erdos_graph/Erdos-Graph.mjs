@@ -19,20 +19,20 @@ export class ErdosGraph{
     }
 
     calculateErdosPath(id, name){
-        console.log(id,name)
         let node = !id? !name ? null : this.nodes.getNodeByName(name) : this.nodes.getNodeById(id)
-        console.log(node);
         if(!node)
             return []
+
         let bfsQueue = [], visited = {}, dist = -1, isPaulErdos = false , path = []
         bfsQueue.push(node)
+
         while(bfsQueue.length && !isPaulErdos && dist < 5){
             let currLevel = []
             dist++
             while (bfsQueue.length){
                 currLevel.push(bfsQueue.shift())
             }
-            // console.log(currLevel, bfsQueue);
+
             for(const n of currLevel){
                 if(n.id == '0')
                     isPaulErdos =true
