@@ -22,6 +22,15 @@ export class Nodes{
     getNodeByName(name){
         return this.nameMap[name]
     }
+
+    normlizeNodeName(name){
+        if(typeof name == 'string'){
+            name = name.replace('*','').replace(/\^\d/,'').toLowerCase().trim().replace(' ', '_')
+            return name
+        } else 
+            return name
+    }
+
 }
 
 export class Node{

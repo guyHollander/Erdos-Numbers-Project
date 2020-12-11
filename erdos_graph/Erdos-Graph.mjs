@@ -19,6 +19,8 @@ export class ErdosGraph{
     }
 
     calculateErdosPath(id, name){
+        if(name) 
+            name = this.nodes.normlizeNodeName(name)
         let node = !id? !name ? null : this.nodes.getNodeByName(name) : this.nodes.getNodeById(id)
         if(!node)
             return []
