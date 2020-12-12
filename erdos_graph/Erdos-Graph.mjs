@@ -42,8 +42,10 @@ export class ErdosGraph{
                 let neighbors = n.neighbors
                 for(const neigh of neighbors){
                     if(!visited[neigh.id]){
-                        visited[neigh.id] = n
+                        visited[neigh.id] = [n]
                         bfsQueue.push(neigh)
+                    } else{
+                        visited[neigh.id].push(n)
                     }
                 }
             }
@@ -57,7 +59,7 @@ export class ErdosGraph{
         let curr = this.nodes.getNodeById('0')
         while(curr.id != node.id){
             path.push(curr.name)
-            curr = visited[curr.id]
+            curr = visited[curr.id][0]
         }
         curr.erdosNumber = dist
         path.push(curr.name)
