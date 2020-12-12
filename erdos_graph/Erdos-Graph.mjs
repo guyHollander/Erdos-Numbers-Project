@@ -12,7 +12,7 @@ export class ErdosGraph{
             else {
                 let n1 = this.nodes.getNodeById(e[0]), n2 = this.nodes.getNodeById(e[1])
                 if(!n1 || !n2)
-                    console.log(`invalid nodes ${n1}, ${n2}`);
+                    console.log(`invalid nodes ${n1}, ${n2}`, e);
                 else 
                     {n1.setNeighbor(n2); n2.setNeighbor(n1)}
             }})
