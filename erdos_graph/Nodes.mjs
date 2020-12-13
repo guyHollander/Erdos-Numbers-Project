@@ -25,7 +25,8 @@ export class Nodes{
 
     normlizeNodeName(name){
         if(typeof name == 'string'){
-            name = name.replace('*','').replace(/\^\d/,'').toLowerCase().trim().replace(' ', '_')
+            name = name.replace('*','').replace(/\^\d/,'').toLowerCase().trim().split(' ').join('_').replace(' ', '_')
+            console.log(name);
             return name
         } else 
             return name

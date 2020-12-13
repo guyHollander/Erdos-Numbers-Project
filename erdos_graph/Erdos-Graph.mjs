@@ -12,7 +12,7 @@ export class ErdosGraph{
             else {
                 let n1 = this.nodes.getNodeById(e[0]), n2 = this.nodes.getNodeById(e[1])
                 if(!n1 || !n2)
-                    console.log(`invalid nodes ${n1}, ${n2}`);
+                    console.log(`invalid nodes ${n1}, ${n2}`, e);
                 else 
                     {n1.setNeighbor(n2); n2.setNeighbor(n1)}
             }})
@@ -42,8 +42,10 @@ export class ErdosGraph{
                 let neighbors = n.neighbors
                 for(const neigh of neighbors){
                     if(!visited[neigh.id]){
-                        visited[neigh.id] = n
+                        visited[neigh.id] = [n]
                         bfsQueue.push(neigh)
+                    } else{
+                        visited[neigh.id].push(n)
                     }
                 }
             }
@@ -57,7 +59,7 @@ export class ErdosGraph{
         let curr = this.nodes.getNodeById('0')
         while(curr.id != node.id){
             path.push(curr.name)
-            curr = visited[curr.id]
+            curr = visited[curr.id][0]
         }
         curr.erdosNumber = dist
         path.push(curr.name)
