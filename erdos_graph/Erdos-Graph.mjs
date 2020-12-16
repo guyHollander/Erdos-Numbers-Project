@@ -108,6 +108,3 @@ export class ErdosGraph{
 
 
 }
-
-let g = new ErdosGraph()
-console.log(g.returnErdosSubGraph('15453'));
