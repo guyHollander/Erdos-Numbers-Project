@@ -26,10 +26,8 @@ except:
     install_package('unidecode')
     from unidecode import unidecode
 
-# if you want to restart this script, put 0 in "save_position" file
-round = 1
-
-Debug = False
+# if you want to restart this script, put -1 in "save_position" file
+round = 200
 
 def get_new_id(node_file):
     return int(node_file[len(node_file)-1].split(',')[0]) + 1
@@ -77,33 +75,20 @@ def choose_name(name, options):
 
 
 def search_node_in_file_and_add_if_needed(author_name, first, last, node_file, list_to_append):
-    if Debug:
-        print('first: ' + first)
-        print('last: ' + last)
-        print(author_name)
     for node in node_file:
         find_first = node.find(first)
         find_last = node.find(last)
         if (find_first != -1) & (find_last != -1):
             if (node[find_first - 1].isalpha() == False) & (node[find_first + len(first)].isalpha() == False) & \
                 (node[find_last - 1].isalpha() == False) & (node[find_last + len(last)].isalpha() == False):
-                if Debug:
-                    print(node)
+                # print(node)
                 founded_node_id = int(node.split(',')[0])
                 return node_file, list_to_append, founded_node_id
-        if author_name in node:
-            if Debug:    
-                print(node)
-            founded_node_id = int(node.split(',')[0])
-            return node_file, list_to_append, founded_node_id
-
     # Not found
     new_id = get_new_id(node_file)
     node = f'{new_id},{author_name}\n'
-    node_file.extend(node)
-    list_to_append.extend(node)
-    if Debug:
-        print(list_to_append)
+    node_file.append(node)
+    list_to_append.append(node)
     return node_file, list_to_append, new_id
 
 
@@ -114,8 +99,8 @@ def search_edge_in_file_and_add_if_needed(id1, id2, edge_file, list_to_append):
         if (edge == edge_option_1) | (edge == edge_option_2):
             return edge_file, list_to_append
     # Not found
-    edge_file.extend(edge_option_1)
-    list_to_append.extend(edge_option_1)
+    edge_file.append(edge_option_1)
+    list_to_append.append(edge_option_1)
     return edge_file, list_to_append
             
 
