@@ -6,7 +6,7 @@ const graph = new ErdosGraph()
 
 /* GET home page. */
 router.get('/erdosPath', function(req, res, next) {
-  res.json(graph.calculateErdosPath(null, req.query['name']))
+  res.json(graph.returnErdosSubGraph(null, req.query['name']))
 });
 
 export default router

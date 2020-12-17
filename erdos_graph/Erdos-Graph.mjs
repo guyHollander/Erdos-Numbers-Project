@@ -18,53 +18,93 @@ export class ErdosGraph{
             }})
     }
 
-    calculateErdosPath(id, name){
-        if(name) 
-            name = this.nodes.normlizeNodeName(name)
-        let node = !id? !name ? null : this.nodes.getNodeByName(name) : this.nodes.getNodeById(id)
-        if(!node)
-            return []
-
-        let bfsQueue = [], visited = {}, dist = -1, isPaulErdos = false , path = []
+    getAllErdosPaths(node){
+        console.log(`get erdos paths`)
+        let bfsQueue = [], visited = {}, finishCalc = {}, dist = 0, isPaulErdos = false 
         bfsQueue.push(node)
 
-        while(bfsQueue.length && !isPaulErdos && dist < 5){
+        while(bfsQueue.length && !isPaulErdos && dist < 10){
             let currLevel = []
             dist++
             while (bfsQueue.length){
                 currLevel.push(bfsQueue.shift())
             }
 
-            for(const n of currLevel){
-                if(n.id == '0')
-                    isPaulErdos =true
-                
-                let neighbors = n.neighbors
-                for(const neigh of neighbors){
-                    if(!visited[neigh.id]){
-                        visited[neigh.id] = [n]
-                        bfsQueue.push(neigh)
-                    } else{
-                        visited[neigh.id].push(n)
+            for(let i = 0; i < currLevel.length; i++){
+                let currNode = currLevel[i]
+
+                for(const neigh of currNode.neighbors){
+                    if(!finishCalc[neigh.id]){
+                        if(visited[neigh.id] == undefined){
+                            visited[neigh.id] = [currNode.id]
+                            bfsQueue.push(neigh)
+                        } else 
+                            visited[neigh.id] = visited[neigh.id].concat(currNode.id)
+
+                        if(neigh.id == '0')
+                            isPaulErdos = true
                     }
                 }
+
+                finishCalc[currNode.id] = true
             }
 
         }
 
-        
         if(!isPaulErdos)
-            return path
-        
-        let curr = this.nodes.getNodeById('0')
-        while(curr.id != node.id){
-            path.push(curr.name)
-            curr = visited[curr.id][0]
+            return []
+
+        let paths = []
+        let getPaths = (p, curr, depth)=>{
+            if(curr.id == node.id){
+                paths.push(p.concat([curr.name]))
+                return
+            }
+            
+            if(depth == 0)
+                return
+            let neighbors = visited[curr.id]
+            if(neighbors.length < 1)
+                return
+
+            for(const neigh of neighbors){
+                getPaths(p.concat([curr.name]), this.nodes.getNodeById(neigh), depth-1)
+            }
+            return
         }
-        curr.erdosNumber = dist
-        path.push(curr.name)
-        return {path, dist}
+        getPaths([],this.nodes.getNodeById('0'), dist)
+        return paths
     }
+
+    returnErdosSubGraph(id, name){
+        if(name) 
+            name = this.nodes.normlizeNodeName(name)
+        let node = !id? !name ? null : this.nodes.getNodeByName(name) : this.nodes.getNodeById(id)
+        if(!node)
+            return {nodes:[], edges:[]}
+        
+        console.log(`Calculate Sub Graph for ${node.name}`)
+
+        // let nodes = [], edges = []
+        let paths = this.getAllErdosPaths(node)
+        let nodes = paths.reduce((nds,p)=>{
+            for(const nd of p){
+                if(!nds.includes(nd))
+                    nds.push(nd)
+                }
+            return nds
+        }, [])
+        let edges = []
+        for(let i = 0; i<nodes.length; i++){
+            for(const nd of nodes.slice(i+1)){
+                if(this.nodes.getNodeByName(nodes[i]).neighbors.includes(this.nodes.getNodeByName(nd)))
+                    edges.push([nodes[i], nd])
+            }
+        }
+
+        return {nodes, edges}
+
+        }
 
 
 }

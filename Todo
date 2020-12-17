@@ -1,0 +1,9 @@
+Backend:
+1. Handle multiple shortest routes
+2. find cross routes edgs
+3. Implment memoization
+Frontend:
+    everything
+Data_set:
+- add nodes and edges from DBLP 
+- add nodes and edges from archive(?)
