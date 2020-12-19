@@ -52,7 +52,7 @@ export class ErdosGraph{
         }
 
         if(!isPaulErdos)
-            return []
+            return {paths:[], dist:Infinity}
 
         let paths = []
         let getPaths = (p, curr, depth)=>{
@@ -73,7 +73,7 @@ export class ErdosGraph{
             return
         }
         getPaths([],this.nodes.getNodeById('0'), dist)
-        return paths
+        return {paths, dist}
     }
 
     returnErdosSubGraph(id, name){
@@ -81,13 +81,13 @@ export class ErdosGraph{
             name = this.nodes.normlizeNodeName(name)
         let node = !id? !name ? null : this.nodes.getNodeByName(name) : this.nodes.getNodeById(id)
         if(!node)
-            return {nodes:[], edges:[]}
+            return {nodes:[], edges:[], dist:Infinity}
         
         console.log(`Calculate Sub Graph for ${node.name}`)
 
         // let nodes = [], edges = []
         let paths = this.getAllErdosPaths(node)
-        let nodes = paths.reduce((nds,p)=>{
+        let nodes = paths.paths.reduce((nds,p)=>{
             for(const nd of p){
                 if(!nds.includes(nd))
                     nds.push(nd)
@@ -102,7 +102,7 @@ export class ErdosGraph{
             }
         }
 
-        return {nodes, edges}
+        return {nodes, edges, dist:paths.dist}
 
         }
 
