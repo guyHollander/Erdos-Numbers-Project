@@ -98,11 +98,11 @@ export class ErdosGraph{
         for(let i = 0; i<nodes.length; i++){
             for(const nd of nodes.slice(i+1)){
                 if(this.nodes.getNodeByName(nodes[i]).neighbors.includes(this.nodes.getNodeByName(nd)))
-                    edges.push([nodes[i], nd])
+                    edges.push([this.nodes.formatNameForMermaid(nodes[i]), this.nodes.formatNameForMermaid(nd)])
             }
         }
 
-        return {nodes, edges, dist:paths.dist}
+        return {nodes:nodes.map((n)=>this.nodes.formatNameForMermaid(n)), edges, dist:paths.dist}
 
         }
 
