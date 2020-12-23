@@ -17,7 +17,7 @@ class App extends Component {
 
   setMermaidGraph = (edges) => {
     return 'stateDiagram-v2' + edges.reduce((str, curr)=> {
-      str += `\n${curr[0]} --> ${curr[1]}`
+      str += `\n${curr[0].split('-').join('.')} --> ${curr[1].split('-').join('.')}`
       return str
     }, '')
   }
@@ -62,6 +62,7 @@ class App extends Component {
     let mermaid_vis
     // let g = new Graph()
     if (this.state.need_to_present){
+      console.log(this.state.mermaidGraph);
       erdos_number = <h1 style={{padding: '50px 0 0 70px', margin:'auto'}}>{this.state.name} is Erdos Number: {this.state.erdos_number}</h1>
       mermaid_vis = <div style={{padding: '50px 60px'}}>
         <Mermaid id="graph1" content={this.state.mermaidGraph} redraw={true} />
