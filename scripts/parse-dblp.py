@@ -32,7 +32,7 @@ round = 10
 
 Debug = False
 ERRORS_ALLOWED = 10
-fail_counter = 0
+# fail_counter = 0
 
 
 def get_new_id(node_file):
@@ -146,78 +146,81 @@ if __name__ == "__main__":
     position = int(position_saver.read())
     position_saver.close()
 
-    for node_in_file in nodes_by_lines:
+    # for inside use only:
+    for fail_counter in range(0, ERRORS_ALLOWED):
         try:
-            name_to_find = node_in_file.split(',')[1].replace('_', ' ')
-            id_of_searched = int(node_in_file.split(',')[0])
-            print(name_to_find)
-            print(id_of_searched)
-            print(list_of_nodes_to_add)
-            print(list_of_edges_to_add)
-
-            # skip on passed ids
-            if id_of_searched < position:
-                continue
-
-            options = dblp.search(name_to_find)
-            chosen_publisher_index = choose_name(name_to_find, options)
-            print(chosen_publisher_index)
-            if chosen_publisher_index != -1:
-                publisher = dblp.search(name_to_find)[chosen_publisher_index]
-                # run on every publications and adding it to "nodes_by_lines"
-                for article in publisher.publications:
-                    authors_of_article = article.authors
-                    print(authors_of_article)
-                    for author in authors_of_article:
-                        author = unidecode(author.lower())
-                        if author != unidecode(publisher.name.lower()):
-                            author_splitted = author.split(' ')
-                            # normalizing names
-                            normalized_author = ""
-                            for i in range(len(author_splitted)):
-                                if author_splitted[i].isnumeric() == False:
-                                    normalized_author = normalized_author + author_splitted[i] + '_'
-                            normalized_author = normalized_author[:len(normalized_author)-1]
-                            normalized_splitted = normalized_author.split('_')
-                            
-
-                            # find first and last name which not contain '.' in them
-                            first, last = find_first_and_last(normalized_splitted)
-                            
-                            # Search in Nodes file
-                            nodes_by_lines, list_of_nodes_to_add, added_id = search_node_in_file_and_add_if_needed(normalized_author, first, last, 
-                                                                    nodes_by_lines, list_of_nodes_to_add)
-                            # do not add inside edge
-                            if id_of_searched != added_id:
-                                # find if edge exists
-                                edges_by_lines, list_of_edges_to_add = search_edge_in_file_and_add_if_needed(id_of_searched, added_id, 
-                                                                        edges_by_lines, list_of_edges_to_add)
-            # save to file every "round" names
-            if (id_of_searched % round == 0) & (id_of_searched != 0):
-                # adding all the and edges:
-                appended_nodes = open('data_set/Nodes','a')
-                appended_edges = open('data_set/Edges','a')
-
+            for node_in_file in nodes_by_lines:
+                name_to_find = node_in_file.split(',')[1].replace('_', ' ')
+                id_of_searched = int(node_in_file.split(',')[0])
+                print(name_to_find)
+                print(id_of_searched)
                 print(list_of_nodes_to_add)
                 print(list_of_edges_to_add)
 
-                for line in list_of_nodes_to_add:
-                    appended_nodes.write(line)
-                for line in list_of_edges_to_add:
-                    appended_edges.write(line)
+                # skip on passed ids
+                if id_of_searched < position:
+                    continue
 
-                appended_nodes.close()
-                appended_edges.close()
-                position_saver = open('scripts/save_position', 'w+')
-                position_saver.seek(0)
-                position_saver.write(str(id_of_searched + 1))
-                position_saver.close()
-                
-                # If you want to stop the script every X names - uncomment this
-                # break
+                options = dblp.search(name_to_find)
+                chosen_publisher_index = choose_name(name_to_find, options)
+                print(chosen_publisher_index)
+                if chosen_publisher_index != -1:
+                    publisher = dblp.search(name_to_find)[chosen_publisher_index]
+                    # run on every publications and adding it to "nodes_by_lines"
+                    for article in publisher.publications:
+                        authors_of_article = article.authors
+                        print(authors_of_article)
+                        for author in authors_of_article:
+                            author = unidecode(author.lower())
+                            if author != unidecode(publisher.name.lower()):
+                                author_splitted = author.split(' ')
+                                # normalizing names
+                                normalized_author = ""
+                                for i in range(len(author_splitted)):
+                                    if author_splitted[i].isnumeric() == False:
+                                        normalized_author = normalized_author + author_splitted[i] + '_'
+                                normalized_author = normalized_author[:len(normalized_author)-1]
+                                normalized_splitted = normalized_author.split('_')
+                                
 
-                list_of_nodes_to_add = []
-                list_of_edges_to_add = []
+                                # find first and last name which not contain '.' in them
+                                first, last = find_first_and_last(normalized_splitted)
+                                
+                                # Search in Nodes file
+                                nodes_by_lines, list_of_nodes_to_add, added_id = search_node_in_file_and_add_if_needed(normalized_author, first, last, 
+                                                                        nodes_by_lines, list_of_nodes_to_add)
+                                # do not add inside edge
+                                if id_of_searched != added_id:
+                                    # find if edge exists
+                                    edges_by_lines, list_of_edges_to_add = search_edge_in_file_and_add_if_needed(id_of_searched, added_id, 
+                                                                            edges_by_lines, list_of_edges_to_add)
+                # save to file every "round" names
+                if (id_of_searched % round == 0) & (id_of_searched != 0):
+                    # adding all the and edges:
+                    appended_nodes = open('data_set/Nodes','a')
+                    appended_edges = open('data_set/Edges','a')
+
+                    print(list_of_nodes_to_add)
+                    print(list_of_edges_to_add)
+
+                    for line in list_of_nodes_to_add:
+                        appended_nodes.write(line)
+                    for line in list_of_edges_to_add:
+                        appended_edges.write(line)
+
+                    appended_nodes.close()
+                    appended_edges.close()
+                    position_saver = open('scripts/save_position', 'w+')
+                    position_saver.seek(0)
+                    position_saver.write(str(id_of_searched + 1))
+                    position_saver.close()
+                    
+                    # If you want to stop the script every X names - uncomment this
+                    # break
+
+                    list_of_nodes_to_add = []
+                    list_of_edges_to_add = []
+            break
         except KeyboardInterrupt:
             # quit
             print('bye bye')
@@ -225,15 +228,11 @@ if __name__ == "__main__":
         # return to the last saved position
         except:
             # wait for half minute before rerun
-            time.sleep(30)
+            time.sleep(60)
             # count the number of fails
-            fail_counter += 1
-
-            # for inside use only:
-            if fail_counter == ERRORS_ALLOWED:
-                print('too many errors')
-                print('bye bye')
-                sys.exit()
+            # fail_counter += 1
+            print (fail_counter)
+            print ('Trying again')
 
             # gets the nodes in the beginning
             nodes = open('data_set/Nodes','r+')
@@ -254,4 +253,7 @@ if __name__ == "__main__":
             position_saver.seek(0)
             position = int(position_saver.read())
             position_saver.close()
+
+    print('too many errors')
+    print('bye bye')
 
