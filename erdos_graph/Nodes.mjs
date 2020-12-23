@@ -32,6 +32,15 @@ export class Nodes{
             return name
     }
 
+    
+    formatNameForMermaid(name){
+        if(typeof name == 'string'){
+            return name.split('_').map((n)=>n[0].toUpperCase() + n.substring(1)).join('_')
+        } else 
+            return name
+       
+    }
+
 }
 
 export class Node{
