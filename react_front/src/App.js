@@ -10,11 +10,12 @@ class App extends Component {
       edges:[],
       erdos_number:Infinity,
       name:'',
+      need_to_present:false,
       mermaidGraph:''
     }
   }
 
-  setMermaidGraph(edges){
+  setMermaidGraph = (edges) => {
     return 'stateDiagram-v2' + edges.reduce((str, curr)=> {
       str += `\n${curr[0]} --> ${curr[1]}`
       return str
@@ -29,12 +30,22 @@ class App extends Component {
       } else {
         response.json().then((g)=>{
           console.log(g)
-          this.setState(()=>({nodes:g.nodes, edges:g.edges, erdos_number:g.dist, name:name, mermaidGraph:this.setMermaidGraph(g.edges)}))
-          if(g.edges.length === 0)
-            this.notFoundHandler()
+          this.setState({nodes:g.nodes, edges:g.edges, erdos_number:g.dist, name:name, mermaidGraph:this.setMermaidGraph(g.edges)},() => {
+            if(g.edges.length === 0)
+              this.notFoundHandler()
+            else{
+              this.setState({need_to_present: true})
+            }
+          }
+          )
       })}
     }).catch(err=>console.log(err))
   }
+
+  changeHandler = () => {
+    this.setState({need_to_present:false})
+  }
+
 
   notFoundHandler = () => {
     console.log("not found hendler")
@@ -50,7 +61,7 @@ class App extends Component {
     let erdos_number
     let mermaid_vis
     // let g = new Graph()
-    if (this.state.edges.length > 0){
+    if (this.state.need_to_present){
       erdos_number = <h1 style={{padding: '50px 0 0 70px', margin:'auto'}}>{this.state.name} is Erdos Number: {this.state.erdos_number}</h1>
       mermaid_vis = <div style={{padding: '50px 60px'}}>
         <Mermaid id="graph1" content={this.state.mermaidGraph} redraw={true} />
@@ -71,7 +82,7 @@ class App extends Component {
     return (
       <div>
         <div>
-          <Search onSearch={this.searchHandler} />
+          <Search onSearch={this.searchHandler} onChange={this.changeHandler}/>
         </div>
         {erdos_number}
         {mermaid_vis}

@@ -26,6 +26,7 @@ class Search extends Component {
 
     handleSearchBoxChange = (e) => {
         this.setState({searchBox: e.target.value});
+        this.props.onChange(true)
      }
     
     submitHandler = (e) => {
