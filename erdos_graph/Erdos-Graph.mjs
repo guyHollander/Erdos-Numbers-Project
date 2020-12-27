@@ -85,8 +85,24 @@ export class ErdosGraph{
         
         console.log(`Calculate Sub Graph for ${node.name}`)
 
-        // let nodes = [], edges = []
         let paths = this.getAllErdosPaths(node)
+        let dists = []
+        for(const p of paths.paths){
+            p.forEach((nd,i)=>{
+                    if(dists[i] === undefined)
+                        dists[i] = [nd]
+                    else if (!dists[i].includes(nd))
+                        dists[i].push(nd)
+            })
+        }
+
+        let areNeighbours = (nd1, nd2)=>{
+            if(this.nodes.getNodeByName(nd1).neighbors.includes(this.nodes.getNodeByName(nd2)))
+                return [this.nodes.formatNameForMermaid(nd1), this.nodes.formatNameForMermaid(nd2)]
+            else
+                return []
+        }
+
         let nodes = paths.paths.reduce((nds,p)=>{
             for(const nd of p){
                 if(!nds.includes(nd))
@@ -94,12 +110,25 @@ export class ErdosGraph{
                 }
             return nds
         }, [])
+
         let edges = []
-        for(let i = 0; i<nodes.length; i++){
-            for(const nd of nodes.slice(i+1)){
-                if(this.nodes.getNodeByName(nodes[i]).neighbors.includes(this.nodes.getNodeByName(nd)))
-                    edges.push([this.nodes.formatNameForMermaid(nodes[i]), this.nodes.formatNameForMermaid(nd)])
+        for(let i = 0; i< paths.dist; i++){
+            if(i > 0){
+                // set internal edges
+                for(let j = 0; j<dists[i].length; j++){
+                    for(const nd of dists[i].slice(j+1)){
+                        let e = areNeighbours(dists[i][j], nd)
+                        if(e.length === 2)
+                            edges.push(e)
+                    }
+                }
             }
+            dists[i].forEach((nd)=>{
+                for(const neigh of dists[i+1]){
+                    let e = areNeighbours(nd, neigh)
+                    if(e.length === 2)
+                            edges.push(e)
+                }})
         }
 
         return {nodes:nodes.map((n)=>this.nodes.formatNameForMermaid(n)), edges, dist:paths.dist}
