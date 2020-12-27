@@ -31,8 +31,8 @@ except:
 round = 10
 
 Debug = False
-ERRORS_ALLOWED = 10
-# fail_counter = 0
+ERRORS_ALLOWED = 60
+fail_counter = 0
 
 
 def get_new_id(node_file):
@@ -122,6 +122,26 @@ def search_edge_in_file_and_add_if_needed(id1, id2, edge_file, list_to_append):
     list_to_append.append(edge_option_1)
     return edge_file, list_to_append
             
+def save_current(list_of_nodes_to_add, list_of_edges_to_add, id_of_searched):
+    appended_nodes = open('data_set/Nodes','a')
+    appended_edges = open('data_set/Edges','a')
+
+    print(list_of_nodes_to_add)
+    print(list_of_edges_to_add)
+
+    for line in list_of_nodes_to_add:
+        appended_nodes.write(line)
+    for line in list_of_edges_to_add:
+        appended_edges.write(line)
+
+    appended_nodes.close()
+    appended_edges.close()
+    position_saver = open('scripts/save_position', 'w+')
+    position_saver.seek(0)
+    position_saver.write(str(id_of_searched + 1))
+    position_saver.close()
+
+    return id_of_searched + 1
 
 
 
@@ -147,7 +167,7 @@ if __name__ == "__main__":
     position_saver.close()
 
     # for inside use only:
-    for fail_counter in range(0, ERRORS_ALLOWED):
+    while True:
         try:
             for node_in_file in nodes_by_lines:
                 name_to_find = node_in_file.split(',')[1].replace('_', ' ')
@@ -197,24 +217,7 @@ if __name__ == "__main__":
                 # save to file every "round" names
                 if (id_of_searched % round == 0) & (id_of_searched != 0):
                     # adding all the and edges:
-                    appended_nodes = open('data_set/Nodes','a')
-                    appended_edges = open('data_set/Edges','a')
-
-                    print(list_of_nodes_to_add)
-                    print(list_of_edges_to_add)
-
-                    for line in list_of_nodes_to_add:
-                        appended_nodes.write(line)
-                    for line in list_of_edges_to_add:
-                        appended_edges.write(line)
-
-                    appended_nodes.close()
-                    appended_edges.close()
-                    position_saver = open('scripts/save_position', 'w+')
-                    position_saver.seek(0)
-                    position_saver.write(str(id_of_searched + 1))
-                    position_saver.close()
-                    
+                    save_current(list_of_nodes_to_add, list_of_edges_to_add, id_of_searched)
                     # If you want to stop the script every X names - uncomment this
                     # break
 
@@ -225,34 +228,29 @@ if __name__ == "__main__":
             # quit
             print('bye bye')
             sys.exit()
+        except SyntaxError:
+            # adding all the and edges:
+            position = save_current(list_of_nodes_to_add, list_of_edges_to_add, id_of_searched)
+
+            list_of_nodes_to_add = []
+            list_of_edges_to_add = []
         # return to the last saved position
         except:
             # wait for half minute before rerun
             time.sleep(60)
             # count the number of fails
-            # fail_counter += 1
+            fail_counter += 1
             print (fail_counter)
             print ('Trying again')
 
-            # gets the nodes in the beginning
-            nodes = open('data_set/Nodes','r+')
-            nodes_by_lines = nodes.readlines()
+            if fail_counter == ERRORS_ALLOWED:
+                break
+
+            # save the position of the current id to return to it
+            position = save_current(list_of_nodes_to_add, list_of_edges_to_add, id_of_searched - 1)
             
-            # gets the current edges
-            edges = open('data_set/Edges','r+')
-            edges_by_lines = edges.readlines()
-
-            nodes.close()
-            edges.close()
-
             list_of_nodes_to_add = []
             list_of_edges_to_add = []
-
-            # read the current position to start from
-            position_saver = open('scripts/save_position', 'r+')
-            position_saver.seek(0)
-            position = int(position_saver.read())
-            position_saver.close()
 
     print('too many errors')
     print('bye bye')
