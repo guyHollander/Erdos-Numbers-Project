@@ -160336,7 +160336,6 @@
 160380,galen_stetsyuk
 160381,raghav_gupta
 160382,alex_busch
-160383,college_park
 160384,brian_russin
 160385,celeste_lyn_paul
 160386,gregory_sanders
@@ -165405,7 +165404,6 @@
 1000339,debottam_mandal
 1000340,tutul_biswas
 1000341,tarun_kanti_ghosh
-1000342,indian_institute_of_science_bangalore
 1000343,sourin_das
 1000344,sumathi_rao
 1000345,sumanta_das
@@ -165467,7 +165465,6 @@
 1000401,alex_retzker
 1000402,tuvia_gefen
 1000403,nadav_katz
-1000404,l.d.landau_institute_for_theoretical_physics
 1000405,daoud_bshouty
 1000406,vladas_sidoravicius
 1000407,michael_damron
@@ -165563,7 +165560,6 @@
 1000497,uc_irvine
 1000498,xinlei_pan
 1000499,sean_m._fitshugh
-1000500,department_of_biology_and_biological_engineering_caltech
 1000501,walter_kob
 1000502,daniel_sanchez-mendoza
 1000503,daniel_braak
@@ -165645,7 +165641,6 @@
 1000579,goery_genty
 1000580,laurent_larger
 1000581,yanne_k._chembo
-1000582,math_dept_ucsd
 1000583,hannes_helgason
 1000584,pierre_pudlo
 1000585,ervin_tanczos
@@ -165783,7 +165778,6 @@
 1000717,anastasia_chavez
 1000718,bryan_r._gillespie
 1000719,yvonne-anne_pignolet
-1000720,department_of_computer_science_and_applied_mathematics_weizmann_institute_of_science_israel
 1000721,belghaba_kacem
 1000722,bart_smeets
 1000723,ramesh_sreekantan
@@ -166123,8 +166117,6 @@
 1001057,roman_mikhailov
 1001058,martin_bridson
 1001059,hamish_short
-1001060,city_college_of_new_york
-1001061,steklov_mathematical_institute
 1001062,joseph_l._wetherell
 1001063,kirill_glavatskiy
 1001064,olav_galteland
@@ -166187,9 +166179,7 @@
 1001121,sergei_merenkov
 1001122,alain-sol_sznitman
 1001123,yoav_krauz
-1001124,microsoft_research_and_the_weizmann_institue
 1001125,cyrille_lucas
-1001126,faculty_of_mathematics_and_computer_science
 1001127,bruno_schapira
 1001128,harold_steinacker
 1001129,klaas_pieter_hart
@@ -166428,7 +166418,6 @@
 1001362,xiaoheng_wang
 1001363,benedict_h._gross
 1001364,tom_fisher
-1001365,with_an_appendix_by_tim_and_vladimir_dokchitser
 1001366,takashi_taniguchi
 1001367,frank_thorne
 1001368,zev_klagsbrun
@@ -166614,10 +166603,8 @@
 1001548,michael_rockner
 1001549,albert_vucaj
 1001550,thomas_quinn-gregson
-1001551,cnrslix_ecole_polytechnique_palaiseau_france
 1001552,jens_k_mueller
 1001553,alex_krimkevich
-1001554,max-planck-institute_for_human_development
 1001555,kende_kalina
 1001556,nikolaas_verhulst
 1001557,vladimir_szekely
@@ -166775,7 +166762,6 @@
 1001709,holger_dette
 1001710,astrid_s._pechstein
 1001711,ljiljana_morvaj
-1001712,dieter_kratsch_alexander_langer_mathieu_liedloff_daniel_raible_peter_rossmanith
 1001713,stephane_beauregard
 1001714,peter_hoeyer
 1001715,somshubhro_bandyopadhyay
@@ -167001,7 +166987,6 @@
 1001935,sadamori_kojaku
 1001936,manuela_minozzi
 1001937,stefano_zapperi
-1001938,lab._pmc-ecole_polytechnique_palaiseau
 1001939,sezione_infm_di_roma_la_sapienza
 1001940,romualdo_pastor-satorras
 1001941,alessandro_vespignani
@@ -167020,15 +167005,12 @@
 1001954,hrvoje_stefancic
 1001955,giulia_iori
 1001956,roberto_reno'
-1001957,dep._economia_politica_siena_italy
 1001958,giulia_de_masi
-1001959,dep._pysics_l'aquila_italy
 1001960,giovanni_bonanno
 1001961,infm_udr_palermo
 1001962,and_rosario_n._mantegna
 1001963,paolo_butta
 1001964,lpmmh-espci_paris
-1001965,lpmc_ecole_polytechnique_paris
 1001966,maurizio_castri
 1001967,albert_diaz-guilera
 1001968,francesco_rao
@@ -167047,18 +167029,13 @@
 1001981,tcm_cavendish_lab._cambridge
 1001982,infm_and_infn_sissa_trieste
 1001983,stefano_ciliberti
-1001984,infm_and_dip._fisica_la_sapienza_rome_italy
 1001985,yi-cheng_zhang
 1001986,marco_montuori
 1001987,raffaella_frondoni
-1001988,dep._of_geog._cambridge_uk
 1001989,rebecca_retzlaff
 1001990,carlo_ricotta
-1001991,centro_studi_e_ricerche_e_museo_della_fisica_e._fermi''_compendio_viminale_roma_italy
 1001992,david_gfeller
-1001993,epfl_lausanne_switzerland
 1001994,david_morton_de_lachapelle
-1001995,smc_cnr-infm_rome_italy
 1001996,andrea_parisi
 1001997,cecile_caretta_cartozo
 1001998,michael_m._danziger
@@ -167066,7 +167043,6 @@
 1002000,nathan_a._mcmahon
 1002001,gavin_k._brennen
 1002002,thomas_m._stace
-1002003,mitre_quantum_information_science_group
 1002004,michael_hamrick
 1002005,jose_manuel_aguero_trejo
 1002006,helmut_juergensen
@@ -167098,7 +167074,6 @@
 1002032,fabio_ancona
 1002033,alexander_y._khapalov
 1002034,fabio_s._priuli
-1002035,istituto_per_le_applicazioni_del_calcolo_m._picone''
 1002036,elizabeth_field
 1002037,manuel_valera
 1002038,zhengyang_guo
@@ -167179,7 +167154,6 @@
 1002113,babak_miraftab
 1002114,adi_krasin
 1002115,a._j._radcliff
-1002116,inria_rhone-alpes__lip_laboratoire_de_l'informatique_du_parallelisme_lip
 1002117,orazio_puglisi
 1002118,ulderico_dardano
 1002119,silvana_rinauro
@@ -167267,13 +167241,11 @@
 1002201,sourav_dhar
 1002202,kabir_chakraborty
 1002203,sumanta_chakraborty
-1002204,inria_sophia_antipolis__inria_lorraine__iecn
 1002205,sylvie_roelly
 1002206,pierre-emmanuel_jabin
 1002207,gael_raoul
 1002208,amaury_lambert
 1002209,iecl_tosca
-1002210,inria_sophia_antipolis__inria_lorraine__iecn_jad
 1002211,regis_ferriere
 1002212,sylvie_meleard
 1002213,benoit_henry
@@ -167286,7 +167258,6 @@
 1002220,mathieu_richard
 1002221,fabien_campillo
 1002222,coralie_fritsch
-1002223,inria_sophia_antipolis__inria_nancy_-_grand_est_iecn_iecl
 1002224,iecl_ul
 1002225,mathneuro_imag
 1002226,cmap_iecl_tosca
@@ -167479,7 +167450,6 @@
 1002413,wen-jie_bai
 1002414,yan-bo_xie
 1002415,wei-ke_xiao
-1002416,huawei_technologies_co._ltd
 1002417,srini_venkatramanan
 1002418,jcs_kadupitiya
 1002419,alok_talekar
@@ -167759,9 +167729,7 @@
 1002693,h._a._bethe
 1002694,nicolas_chevalier
 1002695,a._m._mickaelian
-1002696,byurakan_astrophysical_observatory
 1002697,s._k._balayan
-1002698,observatoire_de_haute-provence
 1002699,m._-p._veron-cetty
 1002700,haripriya_chakraborty
 1002701,justin_semonsen
@@ -167813,14 +167781,10 @@
 1002747,jose_l._gamez-merino
 1002748,daniel_pellegrino
 1002749,mike_tyson
-1002750,romanian_academy_institute_of_computer_science
 1002751,iasi_romania
 1002752,newcastle_uk
-1002753,institute_of_computer_science_romanian_academy_iasi
-1002754,romanian_academy_institute_of_computer_science_iasi_romania
 1002755,robert_axel_neiss
 1002756,nicolae_ciprian_bonciocat
-1002757,simion_stoilow_institute_of_mathematics_of_the_romanian_academy_bucharest_romania
 1002758,alex_clark
 1002759,john_hunton
 1002760,abe_clark
@@ -167893,7 +167857,6 @@
 1002827,nir_schreiber
 1002828,daqing_li
 1002829,alejandro_f._rozenfeld
-1002830,amazon_rekognition_israel
 1002831,amin_gholampour
 1002832,amin_rezaeezadeh
 1002833,amin_ansari
@@ -167966,7 +167929,6 @@
 1002900,karena_w._chapman
 1002901,david_a._keen
 1002902,thomas_d._bennett
-1002903,inria_sophia_antipolis__laboratoire_is
 1002904,ici_bucharest
 1002905,sarah_shandera
 1002906,miguel_mostafa
@@ -168015,7 +167977,6 @@
 1002949,rafael_orellana
 1002950,pedro_escarate
 1002951,rodrigo_carvajal
-1002952,inria_paris-rocquencourt
 1002953,mokaplan_ceremade
 1002954,sierra_liens
 1002955,ensae_paristech_parietal
@@ -168028,7 +167989,6 @@
 1002962,pavel_shvartsman
 1002963,kyril_tintarev
 1002964,amit_einav
-1002965,att_labs_--_research
 1002966,frank_wikstrom
 1002967,paul_t._von_hippel
 1002968,igor_holas
@@ -168294,17 +168254,13 @@
 1003228,hermann_a._durr
 1003229,william_f._schlotter
 1003230,vittorino_lanzio
-1003231,the_molecular_foundry_lawrence_berkeley_national_laboratory_berkeley_ca
-1003232,department_of_applied_science_and_technology_politecnico_di_torino_torino_italy
 1003233,gregory_telian
 1003234,alexander_koshelev
-1003235,abeam_technologies_hayward_ca
 1003236,paolo_micheletti
 1003237,gianni_presti
 1003238,elisa_darpa
 1003239,paolo_de_martino
 1003240,monica_lorenzon
-1003241,engineering_department_lawrence_berkeley_national_laboratory_berkeley_ca
 1003242,melanie_west
 1003243,simone_sassolini
 1003244,scott_dhuey
@@ -168323,9 +168279,6 @@
 1003257,kaiqi_yuan
 1003258,lri_igm
 1003259,richard_lasseigne
-1003260,the_rast_collaboration
-1003261,lri_inria_saclay_-_ile_de_france_prism
-1003262,inria_saclay_-_ile_de_france_lix
 1003263,ana_rodrigues
 1003264,xiaofei_zheng
 1003265,david_koslicki
@@ -168410,8 +168363,6 @@
 1003344,olivia_di_matteo
 1003345,chris_smyth
 1003346,sebastian_mayer
-1003347,ecole_polytechnique_cnrs_lix
-1003348,hasso_plattner_institute
 1003349,robert_bassett
 1003350,quentin_louveaux
 1003351,travis_dillon
@@ -168443,10 +168394,8 @@
 1003377,shlomi_reuveni
 1003378,tom_shlomi
 1003379,laria_mis
-1003380,laria_lip_inria_rhone-alpes__lip_laboratoire_de_l'informatique_du_parallelisme
 1003381,sayaka_kamei
 1003382,fukuhito_ooshita
-1003383,lip_inria_saclay_-_ile_de_france
 1003384,vaclav_vlasak
 1003385,martin_rmoutil
 1003386,benjamin_vejnar
@@ -168602,7 +168551,6 @@
 1003536,achill_schuermann
 1003537,graham_ellis
 1003538,viacheslav_grishukhin
-1003539,with_an_appendix_by_mathieu_dutour_sikiric
 1003540,alexander_kupers
 1003541,klaus_hulek
 1003542,wessel_p._j._van_woerden
@@ -168689,7 +168637,6 @@
 1003623,luca_wilke
 1003624,mathias_morbitzer
 1003625,fraunhofer_aisec
-1003626,ecole_polytechnique_federale_de_lausanne
 1003627,bernd_ulrich
 1003628,frank-olaf_schreyer
 1003629,daniel_erman
@@ -168784,7 +168731,6 @@
 1003718,mostafa_abedi
 1003719,ahmad_mahmoudi_darghadam
 1003720,hasan_yousefpour
-1003721,technion_-_israel_institute_of_technology
 1003722,sunder_ram_krishnan
 1003723,tsviqa_lakrec
 1003724,paul_vojta
@@ -168883,8 +168829,6 @@
 1003817,marko_mitrovic
 1003818,andrew_suh
 1003819,audra_mcmillan
-1003820,purple_mountain_observ.
-1003821,purple_mountain_observatory
 1003822,zhaofeng_kang
 1003823,lei_zu
 1003824,r._foot
@@ -168908,10 +168852,7 @@
 1003842,susheela_p._singh
 1003843,ana-maria_staicu
 1003844,keith_crank
-1003845,national_science_foundation
 1003846,fred_torcaso
-1003847,clyde_h._schoolfield_jr.
-1003848,carleton_college
 1003849,jonas_kahn
 1003850,take_nakama
 1003851,john_a._shonder
@@ -168954,7 +168895,6 @@
 1003888,scott_fish
 1003889,joseph_beaman
 1003890,leo_jiang
-1003891,with_a_joint_appendix_with_ilya_d._shkredov
 1003892,brian_c._lacki
 1003893,eberhard_m._schroder
 1003894,vanessa_reams
@@ -169125,7 +169065,6 @@
 1004059,simona_giacintucci
 1004060,tiziana_venturi
 1004061,michael_r._garcia
-1004062,harvard-smithsonian_center_for_astrophysics_cambridge_ma
 1004063,francis_a._primini
 1004064,jeffrey_e._mcclintock
 1004065,laura_grego
@@ -169219,9 +169158,6 @@
 1004153,frankie_tu
 1004154,tom_rosoman
 1004155,ken_zeger
-1004156,the_technion_israel
-1004157,seminar_fuer_sprachwissenschaft_tuebingen
-1004158,laboratory_for_computational_linguistics_technion_israel
 1004159,olivier_arnould
 1004160,francois_hild
 1004161,mathieu_emily
@@ -169235,7 +169171,6 @@
 1004169,christopher_benthune
 1004170,juliana_v._belding
 1004171,mordecai_waegell
-1004172,sobolev_institute_of_mathematics
 1004173,tejinder_neelon
 1004174,jean-pierre_vigue
 1004175,evgeny_a._poletsky
@@ -169386,16 +169321,12 @@
 1004320,imt_esp
 1004321,fabrice_gamboa_alicia_nieto-reyes
 1004322,franck_barthe
-1004323,methodes_d'analyse_stochastique_des_codes_et_traitements_numeriques
 1004324,serge_cohen
 1004325,celine_lacaux
 1004326,gdr_mascot-num_imt
 1004327,cea_imt
 1004328,laas-mac_imt
 1004329,alexandre_janon
-1004330,inria_grenoble_rhone-alpes__ljk_laboratoire_jean_kuntzmann_-_methodes_d'analyse_stochastique_des_codes_et_traitements_numeriques_saf
-1004331,ifpen_-_methodes_d'analyse_stochastique_des_codes_et_traitements_numeriques
-1004332,-_methodes_d'analyse_stochastique_des_codes_et_traitements_numeriques_imt
 1004333,tatiana_labopin-richard
 1004334,umpa-ensl_mc
 1004335,edf_rd
@@ -169403,8 +169334,6 @@
 1004337,guillaume_allain
 1004338,philippe_goudal
 1004339,jean-noel_kien
-1004340,mm_imt
-1004341,edf_rd_prisme_gdr_mascot-num_imt
 1004342,imt_aniti
 1004343,ekaterina_sergienko
 1004344,daniel_busby
@@ -169536,7 +169465,6 @@
 1004470,andrei_kapaev
 1004471,alexander_shumakovitch
 1004472,morwen_thistlethwaite
-1004473,with_an_appendix_by_don_zagier
 1004474,thilo_weinert
 1004475,nick_mattei
 1004476,benoit_landelle
@@ -169573,7 +169501,6 @@
 1004507,ge_gennian
 1004508,bingchen_qian
 1004509,sam_van_gool
-1004510,imperial_college_london
 1004511,karin_cvetko-vah
 1004512,ganna_kudryavtseva
 1004513,wesley_fussner
@@ -169659,13 +169586,7 @@
 1004593,sudip_ghosh
 1004594,riccardo_gonzo
 1004595,sayan_gupta
-1004596,indian_statistical_inst.
-1004597,indian_statistical_inst._calcutta
-1004598,indian_statistical_institute_india
-1004599,indian_statistical_institute_kolkata
 1004600,avijit_bera
-1004601,d.a._college_calcutta
-1004602,dinabandhu_andrews_college_calcutta
 1004603,rabin_banerjee
 1004604,probir_pal
 1004605,praloy_das
@@ -169675,7 +169596,6 @@
 1004609,dripto_biswas
 1004610,santanu_k._maiti
 1004611,shailesh_kulkarni
-1004612,uluberia_college_india
 1004613,pinaki_roy
 1004614,ripon_sk
 1004615,subir_kumar_bhandari
@@ -169800,7 +169720,6 @@
 1004734,christopher_keefe
 1004735,vladimir_l._popov
 1004736,dan_solomon
-1004737,technion-israel_inst._of_technology
 1004738,paul_scott
 1004739,shirali_kadyrov
 1004740,ralf_spatzier
@@ -169851,7 +169770,6 @@
 1004785,eliot_kapit
 1004786,wesley_jones
 1004787,dirk_k._morr
-1004788,los_alamos_national_laboratory
 1004789,peter_f._trautman
 1004790,matthias_j._graf
 1004791,ryan_trottier
@@ -169986,7 +169904,6 @@
 1004920,aritra_gupta
 1004921,anupam_ray
 1004922,carlos_a_plata
-1004923,tata_inst._mumbai
 1004924,ulb_brussels
 1004925,simmi_mourya
 1004926,ritu_parasher
@@ -170092,12 +170009,10 @@
 1005026,virginia_commonwealth_u
 1005027,oystein_linnebo
 1005028,raffaella_cutolo
-1005029,baruch_college_of_cuny
 1005030,benedikt_loewe
 1005031,alfredo_roque_freire
 1005032,hans_robin_solberg
 1005033,steve_warner
-1005034,hewlett-packard_research
 1005035,george_leibman
 1005036,wojciech_aleksander_woloszyn
 1005037,ruizhi_yang
@@ -170197,7 +170112,6 @@
 1005131,mama_abdelli
 1005132,mitsuharu_otani
 1005133,mohamed_ali_jendoubi
-1005134,departement_de_mathematiques
 1005135,chiara_giraudo
 1005136,jetro_vesti
 1005137,kwangmoo_kim
@@ -170244,10 +170158,8 @@
 1005178,navid_azizan-ruhi
 1005179,chrtistos_thrampoulidis
 1005180,sandor_sovago
-1005181,google_research
 1005182,nico_spronk
 1005183,sumiyoshi_abe
-1005184,mathematical_institute_oxford
 1005185,edward_swartz
 1005186,nicholas_proudfoot
 1005187,michael_thaddeus
@@ -170260,9 +170172,7 @@
 1005194,luca_migliorini
 1005195,rafe_mazzeo
 1005196,simone_melchiorre_chiarello
-1005197,renyi_institute_hungary
 1005198,dimitri_wyss
-1005199,yukawa_institute_japan
 1005200,mark_ollila
 1005201,sumit_daftuar
 1005202,robin_blume-kohout
@@ -170442,7 +170352,6 @@
 1005376,stephen_montgomery-smith
 1005377,raul_gouet
 1005378,steffen_hoelldobler
-1005379,karlsruhe_institute_of_technology
 1005380,kai-uwe_kuehnberger
 1005381,daniel_bruce
 1005382,ben_cameron
@@ -170468,7 +170377,6 @@
 1005402,mark_yarrow
 1005403,issac_odegard
 1005404,dusan_holy
-1005405,philips_research_laboratories_eindhoven_netherlands
 1005406,susan_kurien
 1005407,susan_khor
 1005408,dong-gyu_lee
@@ -170804,10 +170712,8 @@
 1005738,akio_fujiwara
 1005739,shigeki_takeuchi
 1005740,tomoya_hirota
-1005741,national_astronomical_observatory_of_japan
 1005742,tomofumi_umemoto
 1005743,kazuo_sorai
-1005744,national_institute_of_information_and_communication_technology
 1005745,tetsuro_kondo
 1005746,bosco_yung
 1005747,jun-ichi_nakashima
@@ -170871,7 +170777,6 @@
 1005805,yuji_higuchi
 1005806,naofumi_shimokawa
 1005807,wenzhi_luo
-1005808,fields_institute
 1005809,fritz_j._grunewald
 1005810,yehuda_izhakian
 1005811,marianne_johnson
@@ -170895,7 +170800,6 @@
 1005829,giorgio_busetto
 1005830,gulin_ercan
 1005831,ismail_s._guloglu
-1005832,goldsmiths_college
 1005833,james_cruickshank
 1005834,hakan_guler
 1005835,samuel_roth
@@ -171158,7 +171062,6 @@
 1006092,kevin_iga
 1006093,stefan_mendez-diez
 1006094,olivier_brunet
-1006095,lig_laboratoire_d'informatique_de_grenoble
 1006096,imj-prg_ouragan
 1006097,ulysse_chabaud
 1006098,eleni_diamanti
@@ -171368,7 +171271,6 @@
 1006302,adel_betina
 1006303,najibeh_shahbaznejad
 1006304,felix_beckebanze
-1006305,institute_for_marine_and_atmospheric_research_utrecht_the_netherlands
 1006306,richard_d._gill
 1006307,alexander_roberts
 1006308,noah_peres
@@ -171396,32 +171298,21 @@
 1006330,jonathan_kemp
 1006331,joseph_patterson
 1006332,john_thorstensen
-1006333,dartmouth_college
 1006334,robert_fried
-1006335,center_for_backyard_astrophysics-flagstaff
 1006336,david_skillman
-1006337,center_for_backyard_astrophysics-east
 1006338,gary_billings
-1006339,center_for_backyard_astrophysics-calgary
 1006340,daniel_a._lidar
 1006341,k._birgitta_whaley
 1006342,thomas_krajci
-1006343,center_for_backyard_astrophysics-new_mexico
 1006344,edward_beshore
-1006345,center_for_backyard_astrophysics-colorado
 1006346,donn_starkey
-1006347,center_for_backyard_astrophysics-indiana
 1006348,arto_oksanen
-1006349,center_for_backyard_astrophysics-finland
 1006350,tonny_vanmunster
-1006351,center_for_backyard_astrophysics-belgium
 1006352,brian_martin
 1006353,robert_rea
-1006354,center_for_backyard_astrophysics-nelson
 1006355,tut_campbell
 1006356,jeff_robertson
 1006357,david_messier
-1006358,center_for_backyard_astrophysics-norwich
 1006359,eve_armstrong
 1006360,guido_schaefer
 1006361,greg_bolt
@@ -171643,7 +171534,6 @@
 1006577,nikhil_byanna
 1006578,john_o._mcginnis
 1006579,patrick_nbless
-1006580,nec_laboratories_america_inc.
 1006581,ut_san_antonio_and_cuny
 1006582,anja_kisek
 1006583,zahra_moayedd
@@ -171721,7 +171611,6 @@
 1006655,loren_greenman
 1006656,jonas_fischer
 1006657,jose_p._palao
-1006658,christiane_p._koch_francoise_masnou-seeuws_ronnie_kosloff
 1006659,monika_leibscher
 1006660,thomas_f._giesen
 1006661,michael_h._goerz
@@ -171906,7 +171795,6 @@
 1006840,federico_romaniello
 1006841,stefano_lia
 1006842,wonsang_you
-1006843,google_research_tel_aviv
 1006844,kunikiko_sadakane
 1006845,manqing_ma
 1006846,nitish_upreti
@@ -172021,7 +171909,6 @@
 1006955,xiangjun_xing
 1006956,david_a._huse
 1006957,alejandro_b._kolton
-1006958,cnrs-laboratoire_de_physique_statistique_de_l'ecole_normale_superieure
 1006959,martin_naraschewski
 1006960,pierre_le_doussal
 1006961,jean_vannimenus
@@ -172186,7 +172073,6 @@
 1007120,katri_huitu
 1007121,sukumar_nandi
 1007122,gaurav_gautam
-1007123,harish-chandra_research_institute
 1007124,mariana_frank
 1007125,artur_kaczmarczyk
 1007126,brian_d._gerardot
@@ -172316,7 +172202,6 @@
 1007250,luke_a._barnes
 1007251,j._berian_james
 1007252,ilya_mednykh
-1007253,tu_wien_-_computer_vision_lab
 1007254,andrew_gilbert
 1007255,richard_bowden
 1007256,martin_halla
@@ -172365,7 +172250,6 @@
 1007299,yosef_zlochower
 1007300,matteo_breschi
 1007301,ofek_birnholtz
-1007302,rochester_institute_of_technology
 1007303,monica_rizzo
 1007304,richard_udall
 1007305,karan_jani
@@ -172487,7 +172371,6 @@
 1007421,timothy_c._jarrett
 1007422,david_zwicker
 1007423,phillip_p._a._staniczenko
-1007424,department_of_bioengineering_imperial_college_london
 1007425,zhiyuan_dong
 1007426,gangshan_jing
 1007427,jaemin_lee
@@ -172599,8 +172482,6 @@
 1007533,laurent_cario
 1007534,alexei_bosak
 1007535,ariane_robitaille
-1007536,institute_for_advanced_study
-1007537,acadia_un._wolfville_n._s._canada
 1007538,jurgen_tolksdorf
 1007539,bernhelm_booss-bavnbek
 1007540,chaofeng_zhu
@@ -172932,7 +172813,6 @@
 1007866,matthew_t._stamps
 1007867,joakim_uhlin
 1007868,ezgi_kantarci_oguz
-1007869,dept._of_mathematics_kth
 1007870,brandon_elford
 1007871,robert_raussendorf
 1007872,piotr_badziag
@@ -173235,7 +173115,6 @@
 1008169,andrzej_majhofer
 1008170,ian_grojnowski
 1008171,constantin_teleman
-1008172,queen_mary_and_westfield_college
 1008173,william_graham
 1008174,alexander_s._cherny
 1008175,boris_buchmann
@@ -173268,8 +173147,6 @@
 1008202,zhongyang_li
 1008203,eric_bridgeford
 1008204,christopher_douville
-1008205,u._waterloo_and_perimeter_inst.
-1008206,cqc_oxford
 1008207,lri_paris_sud
 1008208,ajit_kembhavi
 1008209,patrick_j._p._mccarthy
@@ -173315,8 +173192,6 @@
 1008249,robert_ecke
 1008250,oliver_bauer
 1008251,mark_b._mineev-weinstein
-1008252,center_for_nonlinear_studies
-1008253,center_for_nonlinear_studies_los_alamos_national_laboratory
 1008254,predrag_cvitanovic'
 1008255,c._p._dettmann
 1008256,peter_xenopoulos
