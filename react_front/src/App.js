@@ -1,17 +1,19 @@
 import { Component } from 'react'
-import Search from './search_comp.js';
-import Mermaid from "./Mermaid"
+import Search from './comp_search.js';
+import Mermaid from "./comp_mermaid"
 // import mermaid from 'mermaid'
 class App extends Component {
   constructor(props) {
-    super(props);
+    super(props)
+
     this.state = {
       nodes:[],
       edges:[],
       erdos_number:Infinity,
       name:'',
       need_to_present:false,
-      mermaidGraph:''
+      mermaidGraph:'',
+      withArxiv:true
     }
   }
 
@@ -21,9 +23,9 @@ class App extends Component {
       return str
     }, '')
   }
-  searchHandler = (name, withArxiv) => {
+  searchHandler = (name) => {
     console.log(`i know you send ${name}`)
-    fetch(`/api/erdosPath?name=${name}&withArxiv=${withArxiv}`).then((response)=>{
+    fetch(`/api/erdosPath?name=${name}&withArxiv=${this.state.withArxiv}`).then((response)=>{
       if(response.status !== 200 && response.status !== 304 ){
         console.error(`Failed to query sever : ${response.status}`)
         this.setState((state)=>({nodes:[], edges:[], erdos_number:Infinity}))
@@ -44,6 +46,10 @@ class App extends Component {
 
   changeHandler = () => {
     this.setState({need_to_present:false})
+  }
+
+  pressHandler = (e) => {
+    this.setState({withArxiv: e})
   }
 
 
@@ -83,7 +89,7 @@ class App extends Component {
     return (
       <div>
         <div>
-          <Search onSearch={this.searchHandler} onChange={this.changeHandler}/>
+          <Search onSearch={this.searchHandler} onChange={this.changeHandler} onPress={this.pressHandler}/>
         </div>
         {erdos_number}
         {mermaid_vis}
