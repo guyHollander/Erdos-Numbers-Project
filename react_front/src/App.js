@@ -21,9 +21,9 @@ class App extends Component {
       return str
     }, '')
   }
-  searchHandler = (name) => {
+  searchHandler = (name, withArxiv) => {
     console.log(`i know you send ${name}`)
-    fetch(`/api/erdosPath?name=${name}`).then((response)=>{
+    fetch(`/api/erdosPath?name=${name}&withArxiv=${withArxiv}`).then((response)=>{
       if(response.status !== 200 && response.status !== 304 ){
         console.error(`Failed to query sever : ${response.status}`)
         this.setState((state)=>({nodes:[], edges:[], erdos_number:Infinity}))
