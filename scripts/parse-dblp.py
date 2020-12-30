@@ -40,13 +40,15 @@ def get_new_id(node_file):
 
 def find_first_and_last(normalized_splitted):
     is_assigned = False
+    first = ''
+    last = ''
     for i in range(len(normalized_splitted)):
         if normalized_splitted[i].find('.') == -1:
             if is_assigned == False:
                 first = normalized_splitted[i]
                 is_assigned = True
             last = normalized_splitted[i]
-    return first, last
+    return is_assigned, first, last
 
 
 def choose_name(name, options):
@@ -56,7 +58,9 @@ def choose_name(name, options):
     splitted_name = name.replace('\n','').split(' ')
     for i in range(len(option_names)):
         option = option_names[i]
-        first, last = find_first_and_last(splitted_name)
+        is_assigned, first, last = find_first_and_last(splitted_name)
+        if not is_assigned:
+            return -1
         find_first = option.find(first)
         find_last = option.find(last)
         cond = True
@@ -204,7 +208,10 @@ if __name__ == "__main__":
                                 
 
                                 # find first and last name which not contain '.' in them
-                                first, last = find_first_and_last(normalized_splitted)
+                                # first, last = find_first_and_last(normalized_splitted)
+                                is_assigned, first, last = find_first_and_last(normalized_splitted)
+                                if not is_assigned:
+                                    continue
                                 
                                 # Search in Nodes file
                                 nodes_by_lines, list_of_nodes_to_add, added_id = search_node_in_file_and_add_if_needed(normalized_author, first, last, 
@@ -229,6 +236,8 @@ if __name__ == "__main__":
             print('bye bye')
             sys.exit()
         except SyntaxError:
+            print('PROBLEM!!!')
+            time.sleep(5)
             # adding all the and edges:
             position = save_current(list_of_nodes_to_add, list_of_edges_to_add, id_of_searched)
 
@@ -236,6 +245,7 @@ if __name__ == "__main__":
             list_of_edges_to_add = []
         # return to the last saved position
         except:
+            print('PROBLEM!!!')
             # wait for half minute before rerun
             time.sleep(60)
             # count the number of fails

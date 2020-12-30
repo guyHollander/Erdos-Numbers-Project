@@ -51,13 +51,14 @@ def run_on_xml(xml_root, name):
                 if 'author' in cchild.tag:
                     if DEBUG:
                         print('AUTHOR')
-                    for cname in cchild:
-                        if DEBUG:
-                            print(cname.text)
-                        if cname.text == name:
-                            valid = True
-                        if (len(cname.text.split(' ')) > 1) & ('univ' not in cname.text.lower()):
-                            article_co.append(cname.text)
+                    cname = cchild[0]
+                    # for cname in cchild:
+                    if DEBUG:
+                        print(cname.text)
+                    if cname.text == name:
+                        valid = True
+                    if (len(cname.text.split(' ')) > 1) & ('univ' not in cname.text.lower()) & ('science' not in cname.text.lower()) & ('institute' not in cname.text.lower()):
+                        article_co.append(cname.text)
             valid_counter += 1
             if valid:
                 co_authors.extend(article_co)
@@ -89,7 +90,7 @@ def all_co_authors(name):
     return co_authors
 
 if __name__ == "__main__":
-    name = "Itshak Borosh"
+    name = "Kimberly L. H. Carpenter"
     if NAME:
         print('%20'.join(name.split(' ')))
     co_authors = all_co_authors(name)

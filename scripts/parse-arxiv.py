@@ -11,22 +11,24 @@ from unidecode import unidecode
 round = 10
 
 Debug = False
+Got_Here = False
 ERRORS_ALLOWED = 60
 fail_counter = 0
-
 
 def get_new_id(node_file):
     return int(node_file[len(node_file)-1].split(',')[0]) + 1
 
 def find_first_and_last(normalized_splitted):
     is_assigned = False
+    first = ''
+    last = ''
     for i in range(len(normalized_splitted)):
         if normalized_splitted[i].find('.') == -1:
             if is_assigned == False:
                 first = normalized_splitted[i]
                 is_assigned = True
             last = normalized_splitted[i]
-    return first, last
+    return is_assigned, first, last
 
 
 def choose_name(name, options):
@@ -36,7 +38,9 @@ def choose_name(name, options):
     splitted_name = name.replace('\n','').split(' ')
     for i in range(len(option_names)):
         option = option_names[i]
-        first, last = find_first_and_last(splitted_name)
+        is_assigned, first, last = find_first_and_last(splitted_name)
+        if not is_assigned:
+            return -1
         find_first = option.find(first)
         find_last = option.find(last)
         cond = True
@@ -171,24 +175,34 @@ if __name__ == "__main__":
                     author_splitted = author.split(' ')
                     # normalizing names
                     normalized_author = ""
+                    if Got_Here:
+                        print("Got Here0")
                     for i in range(len(author_splitted)):
                         if (not author_splitted[i].isnumeric()):
                             normalized_author += author_splitted[i] + '_'
                     normalized_author = normalized_author[:len(normalized_author)-1]
                     normalized_splitted = normalized_author.split('_')
                     
-
+                    if Got_Here:
+                        print("Got Here1")
                     # find first and last name which not contain '.' in them
-                    first, last = find_first_and_last(normalized_splitted)
-                    
+                    is_assigned, first, last = find_first_and_last(normalized_splitted)
+                    if not is_assigned:
+                        continue
+                    if Got_Here:
+                        print("Got Here1.5")
                     # Search in Nodes file
                     nodes_by_lines, list_of_nodes_to_add, added_id = search_node_in_file_and_add_if_needed(normalized_author, first, last, 
                                                             nodes_by_lines, list_of_nodes_to_add)
+                    if Got_Here:
+                        print("Got Here2")
                     # do not add inside edge
                     if id_of_searched != added_id:
                         # find if edge exists
                         edges_by_lines, list_of_edges_to_add = search_edge_in_file_and_add_if_needed(id_of_searched, added_id, 
                                                                 edges_by_lines, list_of_edges_to_add)
+                if Got_Here:
+                    print("Got Here3")
                 # save to file every "round" names
                 if (id_of_searched % round == 0) & (id_of_searched != 0):
                     # adding all the and edges:
@@ -198,6 +212,8 @@ if __name__ == "__main__":
 
                     list_of_nodes_to_add = []
                     list_of_edges_to_add = []
+                if Got_Here:
+                    print("Got Here4")
             break
         except KeyboardInterrupt:
             # quit
@@ -212,6 +228,7 @@ if __name__ == "__main__":
             list_of_edges_to_add = []
         # return to the last saved position
         except:
+            print("PROBLEM!!!")
             # wait for half minute before rerun
             time.sleep(60)
             # count the number of fails
