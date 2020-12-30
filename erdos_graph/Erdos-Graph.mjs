@@ -1,10 +1,13 @@
-import {Nodes,Node} from './Nodes.mjs'
-import {Edges} from './Edges.mjs'
+import {Nodes} from './Nodes.mjs'
+import path from 'path'
+// import {Edges} from './Edges.mjs'
+import { SetEdges } from './Edges.mjs'
 
+let getResourcePath = (dir,base) => path.format({dir: dir , base: base})
 export class ErdosGraph{
-    nodes = new Nodes()
-    edges = new Edges()
-    constructor(){
+    constructor(dir){
+        this.nodes = new Nodes(getResourcePath(dir, 'Nodes'))
+        this.edges = new SetEdges(getResourcePath(dir, 'Edges'))
         console.log('Creating graph')
         this.edges.rawEdges.forEach((e)=>{
             if(!e)

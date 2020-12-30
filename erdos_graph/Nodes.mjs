@@ -1,14 +1,16 @@
 import fs from 'fs'
 import path from 'path'
 const nodesPath = path.format({dir:'.\\data_set', base:'Nodes'})
+const nodesPatchArxiv = path.format({dir: '.\\data_set_with_arxiv', base: 'Nodes'})
 
 export class Nodes{
-    rawNodes = fs.readFileSync(nodesPath, {encoding:'utf-8'}).split('\n').map(s=>s.split(','))
-    lstIndex = this.rawNodes[this.rawNodes.length-1][0]
     idMap ={}
     nameMap = {}
 
-    constructor(){
+    constructor(path){
+        console.log(path);
+        this.rawNodes = fs.readFileSync(path, {encoding:'utf-8'}).split('\n').map(s=>s.split(','))
+        this.lstIndex = this.rawNodes[this.rawNodes.length-1][0]
         console.log("Init Nodes successfully, Create Object for each node")
         this.nodes = this.rawNodes.map((n)=> new Node(n))
         console.log('Set-up hash maps')
