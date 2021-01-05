@@ -24,24 +24,29 @@ class App extends Component {
     }, '')
   }
   searchHandler = (name) => {
-    console.log(`i know you send ${name}`)
-    fetch(`/api/erdosPath?name=${name}&withArxiv=${this.state.withArxiv}`).then((response)=>{
-      if(response.status !== 200 && response.status !== 304 ){
-        console.error(`Failed to query sever : ${response.status}`)
-        this.setState((state)=>({nodes:[], edges:[], erdos_number:Infinity}))
-      } else {
-        response.json().then((g)=>{
-          console.log(g)
-          this.setState({nodes:g.nodes, edges:g.edges, erdos_number:g.dist, name:name, mermaidGraph:this.setMermaidGraph(g.edges)},() => {
-            if(g.edges.length === 0)
-              this.notFoundHandler()
-            else{
-              this.setState({need_to_present: true})
+    if(name.toLowerCase() === 'paul erdos' || name.toLowerCase() === 'paul_erdos'){
+      let paul_mermaid = "stateDiagram-v2\nPaul_Erdos"
+      this.setState({need_to_present: true, name: 'Paul Erdos', mermaidGraph: paul_mermaid, erdos_number:0})
+    }
+    else{
+      fetch(`/api/erdosPath?name=${name}&withArxiv=${this.state.withArxiv}`).then((response)=>{
+        if(response.status !== 200 && response.status !== 304 ){
+          console.error(`Failed to query sever : ${response.status}`)
+          this.setState((state)=>({nodes:[], edges:[], erdos_number:Infinity}))
+        } else {
+          response.json().then((g)=>{
+            console.log(g)
+            this.setState({nodes:g.nodes, edges:g.edges, erdos_number:g.dist, name:name, mermaidGraph:this.setMermaidGraph(g.edges)},() => {
+              if(g.edges.length === 0)
+                this.notFoundHandler()
+              else{
+                this.setState({need_to_present: true})
+              }
             }
-          }
-          )
-      })}
-    }).catch(err=>console.log(err))
+            )
+        })}
+      }).catch(err=>console.log(err)) 
+    }
   }
 
   changeHandler = () => {
@@ -49,7 +54,7 @@ class App extends Component {
   }
 
   pressHandler = (e) => {
-    this.setState({withArxiv: e})
+    this.setState({withArxiv: e, need_to_present:false})
   }
 
 
@@ -69,10 +74,10 @@ class App extends Component {
     // let g = new Graph()
     if (this.state.need_to_present){
       console.log(this.state.mermaidGraph);
-      erdos_number = <h1 style={{padding: '50px 0 0 70px', margin:'auto'}}>{this.state.name} is Erdos Number: {this.state.erdos_number}</h1>
-      mermaid_vis = <div style={{padding: '50px 60px'}}>
-        <Mermaid id="graph1" content={this.state.mermaidGraph} redraw={true} />
-      </div>
+      erdos_number = <h1 style={{margin:'auto', textAlign: 'center'}}>{this.state.name} is Erdos Number: {this.state.erdos_number}</h1>
+      mermaid_vis = <div style={{textAlign: 'center', style:"width: 600px;height: 50px"}}>
+          <Mermaid id="graph1" content={this.state.mermaidGraph} redraw={true} />
+        </div>
     }
     else{
       erdos_number = <div></div>
