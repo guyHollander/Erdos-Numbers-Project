@@ -1,21 +1,23 @@
 # FIND DOUBLE NAMES
-node_file = open('data_set/Nodes', 'r')
+node_file = open('data_set_with_arxiv/Nodes', 'r')
 node_lines = node_file.readlines()
 
 double = []
+nodes_numbers = {}
+nodes_names = {}
 
-for i in range(len(node_lines)):
-    subject = node_lines[i].split(',')[1].replace('\n','')
-    subject_id = node_lines[i].split(',')[0]
-    id_list = [subject_id]
-    if subject in double:
-        continue
-    for j in range(i+1, len(node_lines)):
-        candidate = node_lines[j].split(',')[1].replace('\n','')
-        candidate_id = node_lines[j].split(',')[0]
-        if subject == candidate:
-            print('ERROR!!!, Double ' + subject)
-            double.append(candidate)
-            id_list.append(candidate_id)
-    if len(id_list) > 1:
-        print(id_list)
+for node in node_lines:
+    node_number = node.split(',')[1]
+    node_name = node.split(',')[0]
+    if nodes_numbers.get(node_number) == None:
+        nodes_numbers[node_number] = 1
+    else:
+        print('ERROR!!!, Double Number' + node_number)
+        double.append(node_number)
+    if nodes_numbers.get(node_name) == None:
+        nodes_numbers[node_name] = 1
+    else:
+        print('ERROR!!!, Double Number' + node_name)
+        double.append(node_name)
+    
+print(double)
