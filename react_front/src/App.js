@@ -74,8 +74,10 @@ class App extends Component {
     // let g = new Graph()
     if (this.state.need_to_present){
       console.log(this.state.mermaidGraph);
+      // let graph_size = this.state.mermaidGraph.length
+      // let margin = '-'+ (graph_size*0.0125).toString() + '% -'+ (graph_size*0.0125).toString()+'%'
       erdos_number = <h1 style={{margin:'auto', textAlign: 'center'}}>{this.state.name} is Erdos Number: {this.state.erdos_number}</h1>
-      mermaid_vis = <div style={{textAlign: 'center', style:"width: 600px;height: 50px"}}>
+      mermaid_vis = <div  style={{margin:"0 -800px", textAlign: 'center'}}>
           <Mermaid id="graph1" content={this.state.mermaidGraph} redraw={true} />
         </div>
     }
